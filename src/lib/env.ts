@@ -8,5 +8,5 @@ export function publicSupabaseEnv(): { url: string; key: string } | null {
 }
 
 export function appUrl(): string {
-  return (process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000").replace(/\/$/, "")
+  return (process.env.NEXT_PUBLIC_APP_URL || "https://addesk.vercel.app").replace(/\/$/, "")
 }
