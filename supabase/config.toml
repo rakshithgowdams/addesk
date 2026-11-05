@@ -1,0 +1,13 @@
+project_id = "addesk"
+
+[db]
+major_version = 17
+
+[db.migrations]
+enabled = true
+
+[auth]
+enabled = true
+enable_signup = false
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["http://localhost:3000/auth/callback", "http://localhost:3000/reset-password"]

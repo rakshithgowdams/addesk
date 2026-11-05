@@ -30,8 +30,15 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# local Supabase CLI cache
+supabase/.temp
+
+# env files. Real secrets stay local. Only the example file is tracked.
+.env
+.env.local
+.env*.local
 .env*
+!.env.example
 
 # vercel
 .vercel
