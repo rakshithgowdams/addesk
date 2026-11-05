@@ -2,6 +2,7 @@
 
 import { useActionState } from "react"
 import Link from "next/link"
+import { Loader2 } from "lucide-react"
 import { requestPasswordReset, signIn, updatePassword } from "@/server/actions/auth"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -24,7 +25,10 @@ export function LoginForm({ next, error }: { next?: string; error?: string }) {
       {error === "disabled" ? <p className="text-sm text-destructive">{t("auth.disabled")}</p> : null}
       {error === "missing" ? <p className="text-sm text-destructive">{t("auth.noProfile")}</p> : null}
       {state.error ? <p className="text-sm text-destructive" role="alert">{state.error}</p> : null}
-      <Button className="h-11" disabled={pending}>{t("auth.signIn")}</Button>
+      <Button className="h-11" disabled={pending} aria-busy={pending}>
+        {pending ? <Loader2 className="animate-spin" /> : null}
+        {pending ? t("auth.signingIn") : t("auth.signIn")}
+      </Button>
       <Link href="/forgot-password" className="text-sm underline-offset-4 hover:underline">{t("auth.forgot")}</Link>
     </form>
   )

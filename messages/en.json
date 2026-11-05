@@ -23,6 +23,7 @@
     "email": "Email",
     "password": "Password",
     "signIn": "Sign in",
+    "signingIn": "Signing in…",
     "forgot": "Forgot password",
     "forgotTitle": "Reset your password",
     "forgotHelp": "If this email has an account, we will send a reset link.",
